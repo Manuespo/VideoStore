@@ -8,6 +8,7 @@ public class Rent {
     private LocalDate date=LocalDate.now();
     private int rentDays;
     private LocalDate dueDate=date.plusDays(rentDays);
+    private static final double rentPricePerDay=500;
 
     public Rent(Customer customer, Film film, int rentDays) {
         this.customer = customer;
@@ -56,6 +57,10 @@ public class Rent {
 
     public void setDueDate(LocalDate dueDate) {
         this.dueDate = dueDate;
+    }
+    public double payment()
+    {
+        return rentPricePerDay*rentDays;
     }
 
     @Override
